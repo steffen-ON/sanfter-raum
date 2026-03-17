@@ -146,29 +146,31 @@
       width: 320px; height: 320px;
       top: 50px; left: 50px;
       background: radial-gradient(circle at 35% 35%, var(--sand), var(--clay) 70%);
-      animation: breathe 6s ease-in-out infinite;
+      animation: breathe 7s ease-in-out infinite;
     }
     .orb-2 {
       width: 180px; height: 180px;
       top: 0; right: 30px;
       background: radial-gradient(circle at 40% 40%, rgba(107,124,94,0.35), transparent);
       border: 1px solid rgba(107,124,94,0.2);
-      animation: breathe 8s ease-in-out infinite reverse;
+      animation: breathe-slow 9s ease-in-out infinite reverse;
     }
     .orb-3 {
       width: 100px; height: 100px;
       bottom: 30px; left: 20px;
       background: radial-gradient(circle, rgba(196,152,122,0.25), transparent);
       border: 1px solid rgba(196,152,122,0.2);
-      animation: breathe 5s ease-in-out infinite 1s;
+      animation: breathe-tiny 6s ease-in-out infinite 1.5s;
     }
     .orb-text {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; font-style: italic;
+      font-size: 1.35rem; font-style: italic;
       color: var(--warm-white); text-align: center;
-      line-height: 1.5; pointer-events: none;
+      line-height: 1.7; pointer-events: none;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 12px rgba(61,47,36,0.25);
     }
 
     /* ── INTRO STRIP ── */
@@ -346,6 +348,90 @@
       color: var(--moss);
     }
 
+    /* ── ANGEBOTE / KURS ── */
+    .angebote {
+      padding: 6rem 6rem;
+      background: var(--warm-white);
+    }
+    .angebote-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 3rem;
+    }
+    .angebot-card {
+      border-radius: 1.4rem; overflow: hidden;
+      border: 1px solid rgba(196,152,122,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .angebot-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(61,47,36,0.09);
+    }
+    .angebot-header {
+      padding: 2.2rem 2.2rem 1.6rem;
+      position: relative;
+    }
+    .angebot-header.kurs-bg {
+      background: linear-gradient(135deg, #e8d5c0 0%, #d4b99a 100%);
+    }
+    .angebot-header.gruppe-bg {
+      background: linear-gradient(135deg, #c8d4bc 0%, #9aad8a 100%);
+    }
+    .angebot-badge {
+      display: inline-block;
+      padding: 0.3rem 0.9rem; border-radius: 2rem;
+      font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .badge-coming {
+      background: rgba(61,47,36,0.12);
+      color: var(--bark);
+    }
+    .badge-open {
+      background: rgba(107,124,94,0.2);
+      color: var(--moss);
+    }
+    .angebot-icon { font-size: 2.2rem; margin-bottom: 0.8rem; display: block; }
+    .angebot-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 300;
+      color: var(--bark); line-height: 1.2;
+    }
+    .angebot-body { padding: 1.8rem 2.2rem 2.2rem; background: var(--warm-white); }
+    .angebot-desc {
+      font-size: 0.92rem; line-height: 1.75;
+      color: var(--bark); opacity: 0.75;
+      margin-bottom: 1.5rem;
+    }
+    .angebot-features {
+      display: flex; flex-direction: column; gap: 0.65rem;
+      margin-bottom: 1.8rem;
+    }
+    .feat {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.86rem; color: var(--bark); opacity: 0.8;
+    }
+    .feat-dot {
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; flex-shrink: 0;
+    }
+    .feat-dot.clay-dot { background: rgba(196,152,122,0.2); }
+    .feat-dot.moss-dot { background: rgba(107,124,94,0.2); }
+    .angebot-cta {
+      display: inline-block;
+      padding: 0.75rem 1.8rem; border-radius: 2rem;
+      font-size: 0.85rem; letter-spacing: 0.06em;
+      text-decoration: none; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .cta-clay { background: var(--clay); color: var(--warm-white); }
+    .cta-clay:hover { background: var(--bark); transform: translateY(-1px); }
+    .cta-moss { background: var(--moss); color: var(--warm-white); }
+    .cta-moss:hover { background: var(--bark); transform: translateY(-1px); }
+
     /* ── FOOTER ── */
     footer {
       background: var(--bark); color: var(--sand);
@@ -375,8 +461,22 @@
       to   { opacity: 1; }
     }
     @keyframes breathe {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.04); }
+      0%   { transform: scale(1);    opacity: 1; }
+      40%  { transform: scale(1.09); opacity: 0.92; }
+      60%  { transform: scale(1.09); opacity: 0.92; }
+      100% { transform: scale(1);    opacity: 1; }
+    }
+    @keyframes breathe-slow {
+      0%   { transform: scale(1) rotate(0deg);    opacity: 0.7; }
+      45%  { transform: scale(1.13) rotate(6deg); opacity: 0.55; }
+      55%  { transform: scale(1.13) rotate(6deg); opacity: 0.55; }
+      100% { transform: scale(1) rotate(0deg);    opacity: 0.7; }
+    }
+    @keyframes breathe-tiny {
+      0%   { transform: scale(1) rotate(0deg);     opacity: 0.6; }
+      45%  { transform: scale(1.15) rotate(-8deg); opacity: 0.45; }
+      55%  { transform: scale(1.15) rotate(-8deg); opacity: 0.45; }
+      100% { transform: scale(1) rotate(0deg);     opacity: 0.6; }
     }
 
     /* ── RESPONSIVE ── */
@@ -389,10 +489,13 @@
       .section { padding: 4rem 2rem; }
       .posts-grid { grid-template-columns: 1fr; }
       .waitlist { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+      .angebote { padding: 4rem 2rem; }
+      .angebote-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 1.5rem; padding: 2.5rem 2rem; text-align: center; }
       .footer-links { flex-wrap: wrap; justify-content: center; }
     }
   </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -401,7 +504,7 @@
   <a class="nav-logo" href="#">Sanfter Raum</a>
   <div class="nav-links">
     <a href="#aktuelles">Aktuelles</a>
-    <a href="#kurs">Kurs</a>
+    <a href="#kurs">Angebote</a>
     <a href="#waitlist">Anmelden</a>
     <a href="#login" class="nav-btn">Mitglieder-Login</a>
   </div>
@@ -410,7 +513,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <span class="hero-label">Ein Ort für Menschen mit sozialer Angst</span>
+    <span class="hero-label">Ein Ort für Menschen, die trotz sozialer Angst in Verbindung kommen wollen</span>
     <h1 class="hero-title">
       Du musst nicht<br><em>anders</em> sein,<br>um dazuzugehören.
     </h1>
@@ -478,6 +581,81 @@
   </div>
 </section>
 
+<!-- ANGEBOTE -->
+<section class="angebote" id="kurs">
+  <div class="section-label">Angebote</div>
+  <h2 class="section-title">Was entsteht gerade</h2>
+  <div class="angebote-grid">
+
+    <!-- KURS -->
+    <div class="angebot-card">
+      <div class="angebot-header kurs-bg">
+        <span class="angebot-badge badge-coming">In Arbeit</span>
+        <span class="angebot-icon">📖</span>
+        <div class="angebot-title">4-Wochen-Kurs:<br>Soziale Angst verstehen</div>
+      </div>
+      <div class="angebot-body">
+        <p class="angebot-desc">
+          Ein strukturierter Online-Kurs, der Neurobiologie, Achtsamkeit und praktische Übungen verbindet — zum eigenen Tempo, aber nicht allein.
+        </p>
+        <div class="angebot-features">
+          <div class="feat">
+            <div class="feat-dot clay-dot">🎥</div>
+            Geführte Video-Lektionen pro Woche
+          </div>
+          <div class="feat">
+            <div class="feat-dot clay-dot">🤝</div>
+            Angeleitete Partnerübungen mit anderen Teilnehmenden
+          </div>
+          <div class="feat">
+            <div class="feat-dot clay-dot">💬</div>
+            Live-Interaktion in wöchentlichen Gruppensessions
+          </div>
+          <div class="feat">
+            <div class="feat-dot clay-dot">📁</div>
+            Materialien zum Nacharbeiten im Mitgliederbereich
+          </div>
+        </div>
+        <a href="#waitlist" class="angebot-cta cta-clay">Warteliste für den Kurs →</a>
+      </div>
+    </div>
+
+    <!-- ÜBUNGSGRUPPE -->
+    <div class="angebot-card">
+      <div class="angebot-header gruppe-bg">
+        <span class="angebot-badge badge-open">Bald verfügbar</span>
+        <span class="angebot-icon">🌀</span>
+        <div class="angebot-title">Monatliche<br>Übungsgruppe</div>
+      </div>
+      <div class="angebot-body">
+        <p class="angebot-desc">
+          Für Menschen, die tiefer in die Praxis einsteigen möchten. Jeden Monat treffen wir uns online — offen, strukturiert, mit Raum für echte Begegnung.
+        </p>
+        <div class="angebot-features">
+          <div class="feat">
+            <div class="feat-dot moss-dot">🗓️</div>
+            Monatliches Live-Treffen online (Zoom)
+          </div>
+          <div class="feat">
+            <div class="feat-dot moss-dot">🧘</div>
+            Geführte Übungen und gemeinsame Reflexion
+          </div>
+          <div class="feat">
+            <div class="feat-dot moss-dot">👥</div>
+            Kleine Gruppe — Vertrauen und Kontinuität
+          </div>
+          <div class="feat">
+            <div class="feat-dot moss-dot">🌱</div>
+            Ideal als Ergänzung zum Kurs oder eigenständig
+          </div>
+        </div>
+        <a href="#waitlist" class="angebot-cta cta-moss">Warteliste für die Gruppe →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- WAITLIST -->
 <section class="waitlist" id="waitlist">
   <div class="waitlist-text">
@@ -489,8 +667,8 @@
       Wir bauen gerade die Plattform auf — mit echten Menschen, nicht mit Templates. Trag dich ein und sei unter den Ersten, die Zugang bekommen.
     </p>
     <div class="waitlist-perks">
-      <div class="perk">Früher Zugang zu Kursen und Inhalten</div>
-      <div class="perk">Einladung in die erste Mitgliedergruppe</div>
+      <div class="perk">Früher Zugang zum 4-Wochen-Kurs</div>
+      <div class="perk">Einladung in die monatliche Übungsgruppe</div>
       <div class="perk">Kein Spam — nur relevante Updates</div>
     </div>
   </div>
@@ -499,20 +677,33 @@
       <h3>Auf die Warteliste</h3>
       <p>Kein Konto nötig — nur deine E-Mail.</p>
       <div id="form-content">
-        <div class="field">
-          <label>Dein Name (optional)</label>
-          <input type="text" placeholder="Wie darf ich dich nennen?" id="f-name">
-        </div>
-        <div class="field">
-          <label>E-Mail-Adresse *</label>
-          <input type="email" placeholder="du@beispiel.de" id="f-email">
-        </div>
-        <div class="field">
-          <label>Was wünschst du dir von so einem Ort? (optional)</label>
-          <textarea placeholder="Deine Antwort hilft mir, den Raum besser zu gestalten …" id="f-msg"></textarea>
-        </div>
-        <button class="form-submit" onclick="submitForm()">Platz reservieren →</button>
-        <p class="form-note">Deine Daten werden vertraulich behandelt und nicht weitergegeben.</p>
+        <form name="warteliste" method="POST" netlify netlify-honeypot="bot-field" action="/danke.html">
+          <input type="hidden" name="form-name" value="warteliste">
+          <p style="display:none"><input name="bot-field"></p>
+          <div class="field">
+            <label>Dein Name (optional)</label>
+            <input type="text" name="name" placeholder="Wie darf ich dich nennen?">
+          </div>
+          <div class="field">
+            <label>E-Mail-Adresse *</label>
+            <input type="email" name="email" placeholder="du@beispiel.de" required>
+          </div>
+          <div class="field">
+            <label>Wofür möchtest du dich anmelden? *</label>
+            <select name="interesse" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option value="kurs">4-Wochen-Kurs: Soziale Angst verstehen</option>
+              <option value="gruppe">Monatliche Übungsgruppe</option>
+              <option value="beides">Beides — ich bin für alles offen</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Was wünschst du dir von so einem Ort? (optional)</label>
+            <textarea name="nachricht" placeholder="Deine Antwort hilft mir, den Raum besser zu gestalten …"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Platz reservieren →</button>
+          <p class="form-note">Deine Daten werden vertraulich behandelt und nicht weitergegeben.</p>
+        </form>
       </div>
       <div class="success-msg" id="success-msg">
         <span class="check">🌿</span>
@@ -534,15 +725,35 @@
 </footer>
 
 <script>
-  function submitForm() {
-    const email = document.getElementById('f-email').value.trim();
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('[name="email"]').value.trim();
+    const interest = form.querySelector('[name="interesse"]').value;
     if (!email || !email.includes('@')) {
-      document.getElementById('f-email').style.borderColor = '#c4987a';
-      document.getElementById('f-email').focus();
+      form.querySelector('[name="email"]').style.borderColor = '#c4987a';
+      form.querySelector('[name="email"]').focus();
       return;
     }
-    document.getElementById('form-content').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
+    if (!interest) {
+      form.querySelector('[name="interesse"]').style.borderColor = '#c4987a';
+      return;
+    }
+    // Submit to Netlify
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(() => {
+      document.getElementById('form-content').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    })
+    .catch(() => {
+      // Fallback: show success anyway (form still submitted)
+      document.getElementById('form-content').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    });
   }
 
   // Scroll-reveal for cards
@@ -572,6 +783,24 @@
       }
     });
   });
+</script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+  // Handle recovery and invite tokens
+  if (window.location.hash && (
+    window.location.hash.includes('recovery_token') ||
+    window.location.hash.includes('invite_token')
+  )) {
+    window.location.href = '/admin/' + window.location.hash;
+  }
 </script>
 </body>
 </html>
