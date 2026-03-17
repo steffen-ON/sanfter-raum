@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danke – Sanfter Raum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clay: #C4987A; --bark: #3D2F24;
+      --cream: #FAF6F0; --moss: #6B7C5E;
+      --warm-white: #FFFDF9;
+    }
+    body {
+      background: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card {
+      text-align: center;
+      max-width: 480px;
+      padding: 3rem 2rem;
+    }
+    .icon {
+      font-size: 3rem; margin-bottom: 1.5rem;
+      display: block;
+      animation: breathe 4s ease-in-out infinite;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 300;
+      color: var(--bark); margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    h1 em { font-style: italic; color: var(--clay); }
+    p {
+      font-size: 1rem; line-height: 1.8;
+      color: var(--bark); opacity: 0.65;
+      margin-bottom: 2rem;
+    }
+    a {
+      display: inline-block;
+      padding: 0.8rem 2rem; border-radius: 2rem;
+      background: var(--moss); color: var(--warm-white);
+      text-decoration: none; font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      transition: background 0.25s;
+    }
+    a:hover { background: var(--bark); }
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="icon">🌿</span>
+    <h1>Danke —<br>du bist <em>dabei.</em></h1>
+    <p>Ich freue mich, dass du den Weg hierher gefunden hast.<br>Du hörst von mir sobald es losgeht.</p>
+    <a href="/">Zurück zur Startseite</a>
+  </div>
+</body>
+</html>
