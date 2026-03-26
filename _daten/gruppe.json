@@ -1,0 +1,13 @@
+{
+  "badge": "Bald verfügbar",
+  "emoji": "🌀",
+  "titel1": "Monatliche",
+  "titel2": "Übungsgruppe",
+  "beschreibung": "Für Menschen, die tiefer in die Praxis einsteigen möchten. Jeden Monat treffen wir uns online — offen, strukturiert, mit Raum für echte Begegnung.",
+  "features": [
+    { "emoji": "🗓️", "text": "Monatliches Live-Treffen online (Zoom)" },
+    { "emoji": "🧘", "text": "Geführte Übungen und gemeinsame Reflexion" },
+    { "emoji": "👥", "text": "Kleine Gruppe — Vertrauen und Kontinuität" },
+    { "emoji": "🌱", "text": "Ideal als Ergänzung zum Kurs oder eigenständig" }
+  ]
+}

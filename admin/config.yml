@@ -17,3 +17,65 @@ collections:
       - { label: "Kurzbeschreibung", name: "excerpt", widget: "string" }
       - { label: "Emoji", name: "emoji", widget: "string", default: "🌿", hint: "Ein Emoji als Titelbild" }
       - { label: "Inhalt", name: "body", widget: "markdown" }
+
+  - name: "einstellungen"
+    label: "Einstellungen"
+    files:
+      - name: "hero"
+        label: "Hero-Bereich"
+        file: "_daten/hero.json"
+        fields:
+          - { label: "Label (oben)", name: "label", widget: "string" }
+          - { label: "Headline Zeile 1", name: "headline1", widget: "string" }
+          - { label: "Headline Zeile 2 (kursiv)", name: "headline2", widget: "string" }
+          - { label: "Headline Zeile 3", name: "headline3", widget: "string" }
+          - { label: "Subtext", name: "subtext", widget: "text" }
+          - { label: "Orb-Text", name: "orbtext", widget: "string", hint: "Text im Kreis, Zeilen mit | trennen z.B. Sicher.|Gesehen.|Verbunden." }
+
+      - name: "strip"
+        label: "Intro-Bereich (dunkle Leiste)"
+        file: "_daten/strip.json"
+        fields:
+          - { label: "Zitat", name: "quote", widget: "string" }
+          - { label: "Begleittext", name: "body", widget: "text" }
+
+      - name: "kurs"
+        label: "Kurs-Infos"
+        file: "_daten/kurs.json"
+        fields:
+          - { label: "Badge-Text", name: "badge", widget: "string", default: "In Arbeit" }
+          - { label: "Emoji", name: "emoji", widget: "string", default: "📖" }
+          - { label: "Titel Zeile 1", name: "titel1", widget: "string" }
+          - { label: "Titel Zeile 2", name: "titel2", widget: "string" }
+          - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Emoji", name: "emoji", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+
+      - name: "gruppe"
+        label: "Übungsgruppen-Infos"
+        file: "_daten/gruppe.json"
+        fields:
+          - { label: "Badge-Text", name: "badge", widget: "string", default: "Bald verfügbar" }
+          - { label: "Emoji", name: "emoji", widget: "string", default: "🌀" }
+          - { label: "Titel Zeile 1", name: "titel1", widget: "string" }
+          - { label: "Titel Zeile 2", name: "titel2", widget: "string" }
+          - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Emoji", name: "emoji", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+
+      - name: "kontakt"
+        label: "Kontakt & Footer"
+        file: "_daten/kontakt.json"
+        fields:
+          - { label: "Site-Name", name: "sitename", widget: "string", default: "Sanfter Raum" }
+          - { label: "Datenschutz-URL", name: "datenschutz", widget: "string" }
+          - { label: "Impressum-URL", name: "impressum", widget: "string" }
+          - { label: "Kontakt-URL oder E-Mail", name: "kontakt", widget: "string" }

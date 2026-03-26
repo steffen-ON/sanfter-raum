@@ -1,0 +1,13 @@
+{
+  "badge": "In Arbeit",
+  "emoji": "📖",
+  "titel1": "4-Wochen-Kurs:",
+  "titel2": "Soziale Angst verstehen",
+  "beschreibung": "Ein strukturierter Online-Kurs, der Neurobiologie, Achtsamkeit und praktische Übungen verbindet — zum eigenen Tempo, aber nicht allein.",
+  "features": [
+    { "emoji": "🎥", "text": "Geführte Video-Lektionen pro Woche" },
+    { "emoji": "🤝", "text": "Angeleitete Partnerübungen mit anderen Teilnehmenden" },
+    { "emoji": "💬", "text": "Live-Interaktion in wöchentlichen Gruppensessions" },
+    { "emoji": "📁", "text": "Materialien zum Nacharbeiten im Mitgliederbereich" }
+  ]
+}
