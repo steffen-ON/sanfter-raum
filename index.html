@@ -513,11 +513,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <span class="hero-label">Ein Ort für Menschen, die trotz sozialer Angst in Verbindung kommen wollen</span>
-    <h1 class="hero-title">
+    <span class="hero-label" id="hero-label">Ein Ort für Menschen, die trotz sozialer Angst in Verbindung kommen wollen</span>
+    <h1 class="hero-title" id="hero-title">
       Du musst nicht<br><em>anders</em> sein,<br>um dazuzugehören.
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" id="hero-sub">
       Sanfter Raum ist eine Gemeinschaft und Lernplattform für Menschen, die soziale Angst kennen — und lernen möchten, anders damit umzugehen. <span>Ohne Druck. Ohne Perfektion.</span>
     </p>
     <div class="hero-cta">
@@ -528,7 +528,7 @@
   <div class="hero-visual">
     <div class="orb-container">
       <div class="orb orb-1">
-        <div class="orb-text">Sicher.<br>Gesehen.<br>Verbunden.</div>
+        <div class="orb-text" id="orb-text">Sicher.<br>Gesehen.<br>Verbunden.</div>
       </div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
@@ -538,10 +538,10 @@
 
 <!-- INTRO STRIP -->
 <div class="strip">
-  <div class="strip-quote">
+  <div class="strip-quote" id="strip-quote">
     „Soziale Angst ist nicht Schüchternheit — sie ist eine erschöpfte Schutzreaktion."
   </div>
-  <div class="strip-body">
+  <div class="strip-body" id="strip-body">
     Sanfter Raum bietet fundierte Inhalte, achtsame Gemeinschaft und praktische Werkzeuge — entwickelt von Menschen, die selbst wissen, wie es ist. Kein therapeutischer Ersatz, aber ein echter Anfang.
   </div>
 </div>
@@ -567,69 +567,45 @@
 <section class="angebote" id="kurs">
   <div class="section-label">Angebote</div>
   <h2 class="section-title">Was entsteht gerade</h2>
-  <div class="angebote-grid">
+  <div class="angebote-grid" id="angebote-grid">
 
     <!-- KURS -->
-    <div class="angebot-card">
+    <div class="angebot-card" id="kurs-card">
       <div class="angebot-header kurs-bg">
-        <span class="angebot-badge badge-coming">In Arbeit</span>
-        <span class="angebot-icon">📖</span>
-        <div class="angebot-title">4-Wochen-Kurs:<br>Soziale Angst verstehen</div>
+        <span class="angebot-badge badge-coming" id="kurs-badge">In Arbeit</span>
+        <span class="angebot-icon" id="kurs-emoji">📖</span>
+        <div class="angebot-title" id="kurs-titel">4-Wochen-Kurs:<br>Soziale Angst verstehen</div>
       </div>
       <div class="angebot-body">
-        <p class="angebot-desc">
+        <p class="angebot-desc" id="kurs-desc">
           Ein strukturierter Online-Kurs, der Neurobiologie, Achtsamkeit und praktische Übungen verbindet — zum eigenen Tempo, aber nicht allein.
         </p>
-        <div class="angebot-features">
-          <div class="feat">
-            <div class="feat-dot clay-dot">🎥</div>
-            Geführte Video-Lektionen pro Woche
-          </div>
-          <div class="feat">
-            <div class="feat-dot clay-dot">🤝</div>
-            Angeleitete Partnerübungen mit anderen Teilnehmenden
-          </div>
-          <div class="feat">
-            <div class="feat-dot clay-dot">💬</div>
-            Live-Interaktion in wöchentlichen Gruppensessions
-          </div>
-          <div class="feat">
-            <div class="feat-dot clay-dot">📁</div>
-            Materialien zum Nacharbeiten im Mitgliederbereich
-          </div>
+        <div class="angebot-features" id="kurs-features">
+          <div class="feat"><div class="feat-dot clay-dot">🎥</div>Geführte Video-Lektionen pro Woche</div>
+          <div class="feat"><div class="feat-dot clay-dot">🤝</div>Angeleitete Partnerübungen mit anderen Teilnehmenden</div>
+          <div class="feat"><div class="feat-dot clay-dot">💬</div>Live-Interaktion in wöchentlichen Gruppensessions</div>
+          <div class="feat"><div class="feat-dot clay-dot">📁</div>Materialien zum Nacharbeiten im Mitgliederbereich</div>
         </div>
         <a href="#waitlist" class="angebot-cta cta-clay">Warteliste für den Kurs →</a>
       </div>
     </div>
 
     <!-- ÜBUNGSGRUPPE -->
-    <div class="angebot-card">
+    <div class="angebot-card" id="gruppe-card">
       <div class="angebot-header gruppe-bg">
-        <span class="angebot-badge badge-open">Bald verfügbar</span>
-        <span class="angebot-icon">🌀</span>
-        <div class="angebot-title">Monatliche<br>Übungsgruppe</div>
+        <span class="angebot-badge badge-open" id="gruppe-badge">Bald verfügbar</span>
+        <span class="angebot-icon" id="gruppe-emoji">🌀</span>
+        <div class="angebot-title" id="gruppe-titel">Monatliche<br>Übungsgruppe</div>
       </div>
       <div class="angebot-body">
-        <p class="angebot-desc">
+        <p class="angebot-desc" id="gruppe-desc">
           Für Menschen, die tiefer in die Praxis einsteigen möchten. Jeden Monat treffen wir uns online — offen, strukturiert, mit Raum für echte Begegnung.
         </p>
-        <div class="angebot-features">
-          <div class="feat">
-            <div class="feat-dot moss-dot">🗓️</div>
-            Monatliches Live-Treffen online (Zoom)
-          </div>
-          <div class="feat">
-            <div class="feat-dot moss-dot">🧘</div>
-            Geführte Übungen und gemeinsame Reflexion
-          </div>
-          <div class="feat">
-            <div class="feat-dot moss-dot">👥</div>
-            Kleine Gruppe — Vertrauen und Kontinuität
-          </div>
-          <div class="feat">
-            <div class="feat-dot moss-dot">🌱</div>
-            Ideal als Ergänzung zum Kurs oder eigenständig
-          </div>
+        <div class="angebot-features" id="gruppe-features">
+          <div class="feat"><div class="feat-dot moss-dot">🗓️</div>Monatliches Live-Treffen online (Zoom)</div>
+          <div class="feat"><div class="feat-dot moss-dot">🧘</div>Geführte Übungen und gemeinsame Reflexion</div>
+          <div class="feat"><div class="feat-dot moss-dot">👥</div>Kleine Gruppe — Vertrauen und Kontinuität</div>
+          <div class="feat"><div class="feat-dot moss-dot">🌱</div>Ideal als Ergänzung zum Kurs oder eigenständig</div>
         </div>
         <a href="#waitlist" class="angebot-cta cta-moss">Warteliste für die Gruppe →</a>
       </div>
@@ -786,12 +762,16 @@
 </script>
 
 <script>
-  // ── Artikel aus GitHub laden ──
+  // ── Globale Konstanten ──
   const GITHUB_USER = 'steffen-ON';
   const GITHUB_REPO = 'sanfter-raum';
   const GITHUB_BRANCH = 'main';
   const ARTICLES_PATH = '_aktuelles';
+  const RAW = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}`;
+</script>
 
+<script>
+  // ── Artikel aus GitHub laden ──
   const TAG_COLORS = {
     'Grundlagen': 'green',
     'Praxis': 'clay',
@@ -833,7 +813,7 @@
   async function loadArticles() {
     const grid = document.getElementById('posts-grid');
     try {
-      const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${ARTICLES_PATH}?ref=${GITHUB_BRANCH}`;
+      const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${ARTICLES_PATH}?ref=${GITHUB_BRANCH}&t=${Date.now()}`;
       const res = await fetch(apiUrl);
       if (!res.ok) throw new Error('Keine Artikel gefunden');
       const files = await res.json();
@@ -868,6 +848,69 @@
   }
 
   loadArticles();
+</script>
+<script>
+  // ── Seitendaten aus GitHub laden ──
+
+  async function loadJSON(path) {
+    try {
+      const r = await fetch(`${RAW}/${path}?t=${Date.now()}`);
+      if (!r.ok) return null;
+      return await r.json();
+    } catch { return null; }
+  }
+
+  function set(id, html) {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = html;
+  }
+
+  function renderFeatures(features, dotClass) {
+    return features.map(f => `
+      <div class="feat">
+        <div class="feat-dot ${dotClass}">${f.emoji}</div>
+        ${f.text}
+      </div>`).join('');
+  }
+
+  async function loadSiteData() {
+    const [hero, strip, kurs, gruppe] = await Promise.all([
+      loadJSON('_daten/hero.json'),
+      loadJSON('_daten/strip.json'),
+      loadJSON('_daten/kurs.json'),
+      loadJSON('_daten/gruppe.json'),
+    ]);
+
+    if (hero) {
+      set('hero-label', hero.label);
+      set('hero-title', `${hero.headline1}<br><em>${hero.headline2}</em> ${hero.headline3}`);
+      set('hero-sub', hero.subtext);
+      set('orb-text', hero.orbtext.split('|').join('<br>'));
+    }
+
+    if (strip) {
+      set('strip-quote', `„${strip.quote}"`);
+      set('strip-body', strip.body);
+    }
+
+    if (kurs) {
+      set('kurs-badge', kurs.badge);
+      set('kurs-emoji', kurs.emoji);
+      set('kurs-titel', `${kurs.titel1}<br>${kurs.titel2}`);
+      set('kurs-desc', kurs.beschreibung);
+      set('kurs-features', renderFeatures(kurs.features, 'clay-dot'));
+    }
+
+    if (gruppe) {
+      set('gruppe-badge', gruppe.badge);
+      set('gruppe-emoji', gruppe.emoji);
+      set('gruppe-titel', `${gruppe.titel1}<br>${gruppe.titel2}`);
+      set('gruppe-desc', gruppe.beschreibung);
+      set('gruppe-features', renderFeatures(gruppe.features, 'moss-dot'));
+    }
+  }
+
+  loadSiteData();
 </script>
 </body>
 </html>
